@@ -4,7 +4,7 @@
 
 Work in progress....
 
-This is readme still needs to be compeleted!
+This is readme still needs to be completed!
 
 
 ## Dependencies
