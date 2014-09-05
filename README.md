@@ -18,11 +18,29 @@ You'll need **jQuery**.
 
 HTML:
 
+    <div class="off-canvas-container js-off-canvas-container">
+        <!-- menu -->
+    </div>
+
+    <div class="off-canvas-container js-off-canvas-container">
+        <!-- content height -->
+    </div>
+
 
 CSS:
 
+All the CSS you need is in `dist/off-canvas-menu.css`.
+
+The CSS is configured in such a way that the off-canvas menu is only active up until a certain breakpoint.
+
+`off-canvas-menu.css` is a generated CSS file. It has gone through a CSS preprocessor (Stylus) and [Autoprefixer](https://github.com/postcss/autoprefixer). To see how the CSS is really configured, checkout the `css/stylus` directory.
+
+Within the Stylus files, you'll come across a variable called `$COLLAPSED-MENU-BREAKPOINT`. This is a major breakpoint that allows us to radically change the appearance of the menu. With this breakpoint we can target the menu once it's in a "collapsed" state. You can adjust this value to match you're own projects' needs.
+
 
 Javascript:
+
+    var menu = new OffCanvasMenu();
 
 
 
@@ -38,7 +56,7 @@ It's been tested on the following browsers:
 
 ## License
 
-The MIT License (MIT)
+**The MIT License (MIT)**
 
 Copyright (c) 2014 Zee Zali
 
@@ -59,3 +77,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
