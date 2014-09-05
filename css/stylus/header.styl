@@ -1,0 +1,65 @@
+
+@import 'base'
+
+
+.site-header
+    background: rgba(black, 0.9)
+
+    +breakpoint($COLLAPSED-MENU-BREAKPOINT)
+        background: rgba(black, 0.95)
+
+
+    .off-canvas-contents
+        padding: 1em 1.8em
+
+        +breakpoint($COLLAPSED-MENU-BREAKPOINT)
+            padding: 0 4%
+
+
+.site-nav
+    padding: em(25 / 16) 0 0
+    text-transform: uppercase
+    
+    +breakpoint($COLLAPSED-MENU-BREAKPOINT)
+        padding: 0
+
+
+    &,
+    .link
+        color: $white
+
+        +breakpoint($COLLAPSED-MENU-BREAKPOINT)
+            color: $grey-1
+
+    .link
+        display: block
+        padding: 0.9em 0
+        font-weight: 600
+        font-size: em(15 / 16)
+
+        +breakpoint($COLLAPSED-MENU-BREAKPOINT)
+            padding: 1.2em 0
+            font-size: em(14 / 16)
+        
+        // 1024
+        +breakpoint('custom', '(min-width: 64em)')
+            font-size: em(15 / 16)
+
+
+    li
+        +breakpoint($COLLAPSED-MENU-BREAKPOINT)
+            display: inline-block
+            text-align: left
+    
+    
+    ul
+        +breakpoint($COLLAPSED-MENU-BREAKPOINT)
+            text-align: justify
+            margin-bottom: -1em
+
+            &:after
+                content: ''
+                width: 100%
+                display: inline-block
+
+

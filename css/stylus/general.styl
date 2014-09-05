@@ -1,0 +1,140 @@
+
+@import 'base'
+
+  
+  
+/*
+===================================
+GLOBAL STYLES
+// styles that impact the 
+// overall layout
+===================================
+*/
+
+
+body
+    font: normal normal 300 100%/1 Helvetica, Arial, sans-serif
+    background: $white
+    color: rgb(50, 50, 50)
+
+
+
+.section
+    padding: 13em 0
+
+    &:nth-child(2n+1)
+        background: rgb(240, 240, 240)
+
+
+#wrapper
+    height: 100%
+
+
+
+
+/* ======================= */
+/* custom amends to resets */
+/* ======================= */
+
+strong,
+.strong
+    font-weight: 700
+
+
+img,
+embed,
+object,
+video 
+    max-width: 100%
+    outline: none
+
+
+a
+    color: $pink-1
+    outline: 0
+    text-decoration: none
+    // -webkit-tap-highlight-color: rgba(0,0,0,0)
+
+    &:hover
+        text-decoration: underline
+
+    &:focus 
+        outline: 0
+
+
+.btn
+    appearance: none
+    padding: 0
+    border: 0
+    margin: 0
+    outline: 0
+    background: transparent
+    cursor: pointer
+
+
+
+
+/* content wrap */
+/* centers the inner content area and limits it's width */
+.content-wrap
+    position: relative
+    max-width: $MAX-LAYOUT-INNER-WIDTH
+    padding: 0 5%
+    margin: 0 auto
+
+    @media (min-width: $MAX-LAYOUT-INNER-WIDTH)
+        padding: 0 3%
+
+    // 1400
+    @media (min-width: em(1400 / 16))
+        padding: 0 2em
+
+
+
+
+/***
+ * off canvas menu trigger
+ *
+ */
+.menu-trigger
+    float: right
+    position: relative
+    z-index: 5
+    margin: 0.8em
+    background: 0
+    appearance: none
+    border: 0
+    
+    .icon
+        width: 1.5em
+
+    &:hover,
+    &:active
+        .shape
+            fill: $grey-2
+
+    .open-icon,
+    .close-icon
+        transition: opacity 250ms ease
+
+    .close-icon
+        opacity: 0
+
+    // when the off canvas menu is open
+    .js-off-canvas-menu__active &
+        transform: translateX(-20%)
+
+        .close-icon
+            opacity: 1
+
+        .open-icon
+            opacity: 0
+
+
+    +breakpoint($COLLAPSED-MENU-BREAKPOINT)
+        display: none
+
+
+
+
+

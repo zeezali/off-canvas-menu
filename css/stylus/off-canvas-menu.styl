@@ -1,0 +1,102 @@
+
+
+@import 'base'
+
+
+*:before,
+*:after,
+*
+    box-sizing: border-box
+
+html,
+body
+    height: 100%
+
+body
+    overflow-x: hidden
+
+
+
+
+/*
+ * OFF CANVAS MENU TEMPLATE
+ *
+ */
+
+$off-canvas-menu-width-1 = 280px
+$off-canvas-menu-width-2 = 350px
+
+.off-canvas-container
+    position: fixed
+    width: $off-canvas-menu-width-1
+    top: 0
+    right: 0
+    // if you apply padding to this, you're gonna have a bad time
+    padding: 0
+    background: rgb(40, 40, 40)
+    color: $white
+    overflow-y: auto
+    min-height: 100%
+    // backface-visibility: hidden
+    user-select: none
+    -webkit-overflow-scrolling: touch
+    display: none
+
+    .js-off-canvas-menu__active &
+        display: block
+
+    +breakpoint('small-1')
+        width: $off-canvas-menu-width-2
+
+    +breakpoint($COLLAPSED-MENU-BREAKPOINT)
+        display: block !important
+        width: 100%
+        height: auto !important
+        min-height: 0
+        overflow: hidden
+        z-index: 10
+
+    
+
+
+.off-canvas-contents
+    padding: 2em
+    min-height: em(640 / 16)
+    backface-visibility: hidden
+
+    +breakpoint($COLLAPSED-MENU-BREAKPOINT)
+        min-height: 0
+
+
+.non-menu-container
+    position: relative
+    z-index: 1
+    background: $white
+    transition: transform 330ms ease
+    backface-visibility: hidden
+    min-height: 100%
+
+    +breakpoint($COLLAPSED-MENU-BREAKPOINT)
+        position: static
+
+    .js-off-canvas-menu__active &
+        $offset-1 = neg($off-canvas-menu-width-1)
+        $offset-2 = neg($off-canvas-menu-width-2)
+        transform: translateX($offset-1) translateZ(0)
+
+        +breakpoint('small-1')
+            transform: translateX($offset-2) translateZ(0)
+
+        // with 3d transforms
+        .csstransforms3d &
+            transform: translate3d($offset-1, 0, 0)
+
+            +breakpoint('small-1')
+                transform: translate3d($offset-2, 0, 0)
+
+
+        // standard menu after a certain point
+        +breakpoint($COLLAPSED-MENU-BREAKPOINT)
+            transform: none !important
+
+

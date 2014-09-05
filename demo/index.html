@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Off Canvas Menu Demo</title>
+
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <link rel="icon" href="favicon.ico">
+    <link href="css/vendor/normalize.css" rel="stylesheet" type="text/css">
+    <link href="css/off-canvas-menu.css" rel="stylesheet" type="text/css">
+    <link href="css/general.css" rel="stylesheet" type="text/css">
+    <link href="css/header.css" rel="stylesheet" type="text/css">
+</head>
+<body ontouchstart="">
+    
+
+
+    <div id="wrapper">
+
+        <!-- header -->
+        <header class="site-header off-canvas-container js-off-canvas-container" >
+            <div class="content-wrap off-canvas-contents">
+                
+                <nav class="site-nav" role="navigation">
+                    <ul class="clear-list">
+                        <li>
+                            <a href="#home" class="link">Home</a>
+                        </li>
+                        <li>
+                            <a href="#about" class="link">About</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="link">Contact</a>
+                        </li>
+                        <li>
+                            <a href="#history" class="link">History</a>
+                        </li>
+                        <li>
+                            <a href="#share" class="link">Share</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        
+        <div class="non-menu-container js-non-menu-container">
+
+            <button type="button" class="menu-trigger btn js-menu-trigger">
+                <div class="icon inline-svg js-inline-svg" data-use="#svg-icon-menu-toggle-01">
+                    <div class="holder">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             width="20px" height="20px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                            <g class="open-icon">
+                                <rect class="shape" fill="#EA008A" width="20" height="4"/>
+                                <rect class="shape" y="8" fill="#EA008A" width="20" height="4"/>
+                                <rect class="shape" y="16" fill="#EA008A" width="20" height="4"/>
+                            </g>
+                            <g class="close-icon">
+                                
+                                    <rect class="shape" x="-0.847" y="7.831" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 24.1421 10)" fill="#EA008A" width="21.694" height="4.339"/>
+                                
+                                    <rect class="shape" x="-0.847" y="7.831" transform="matrix(0.7071 0.7071 -0.7071 0.7071 10 -4.1421)" fill="#EA008A" width="21.694" height="4.339"/>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </button>
+
+
+            <section id="about" class="section">
+                <div class="content-wrap">
+                    <h1>About</h1>
+                </div>
+            </section>
+
+            <section id="contact" class="section">
+                <div class="content-wrap">
+                    <h1>Contact</h1>
+                </div>
+            </section>
+
+            <section id="history" class="section">
+                <div class="content-wrap">
+                    <h1>History</h1>
+                </div>
+            </section>
+
+            <section id="download-app" class="section">
+                <div class="content-wrap">
+                    <h1>Share</h1>
+                </div>
+            </section>
+        
+        </div>
+        <!-- .non-menu-container -->
+
+    </div>
+    <!-- #wrapper -->
+
+
+
+
+    <!--
+    =======
+    Scripts
+    =======
+    -->
+    <script src="../lib/vendor/jquery.js"></script>
+    <script src="../lib/off-canvas-menu.js"></script>
+
+    <script>
+        (function () {
+
+            var menu = new OffCanvasMenu();
+
+        })();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+
+/*!
+===========================
+Stylesheet Author: Zee Zali
+===========================
+*/
+
+
+/* colours */
+$white = rgb(255, 255, 255)
+
+
+
+/*
+==================================
+COMMON VALUES USED FOR BREAKPOINTS
+==================================
+*/
+$MAX-LAYOUT-INNER-WIDTH    = em(1200 / 16)
+$COLLAPSED-MENU-BREAKPOINT = 'large-1'
+
+// note: collapsed menu breakpoint is totally arbitrary
+
+
+
+/*
+================
+custom functions
+================
+*/
+pc($val)
+    $val = $val * 100
+    unit( $val, '%' )
+
+em($val)
+    unit( $val, 'em' )
+
+neg($val)
+    -1 * $val
+
+
+
+/*
+=============
+media queries
+=============
+*/
+
+/* media query definitions */
+$mq-tiny-1         = em(320 / 16)
+$mq-small-1        = em(480 / 16)
+$mq-medium-1       = em(640 / 16)
+$mq-medium-2       = em(768 / 16)
+$mq-large-1        = em(968 / 16)
+$mq-large-2        = em(1200 / 16)
+$mq-large-height-1 = em(630 / 16)
+
+
+/* media Queries Mixin (block mixin) */
+breakpoint($point, $custom = 'min-width: 0')
+
+    if ($point == 'custom') 
+        @media $custom  
+            {block}
+        
+
+    else if ($point == 'tiny-1') 
+        media = '(min-width: %s)' % $mq-tiny-1
+        @media media 
+            {block}
+
+
+    else if ($point == 'small-1') 
+        media = '(min-width: %s)' % $mq-small-1
+        @media media 
+            {block}
+
+
+    else if ($point == 'medium-1') 
+        media = '(min-width: %s)' % $mq-medium-1
+        @media media 
+            {block}
+
+
+    else if ($point == 'medium-2') 
+        media = '(min-width: %s)' % $mq-medium-2
+        @media media 
+            {block}
+
+
+    else if ($point == 'large-1') 
+        media = '(min-width: %s)' % $mq-large-1
+        @media media 
+            {block}
+
+
+    else if ($point == 'large-2') 
+        media-1 = '(min-width: %s)' % $mq-large-2
+        media-2 = '(min-height: %s)' % $mq-large-height-1
+        media   = media-1 + ' and ' + media-2
+        @media media 
+            {block}
+
+
+    else if ($point == 'max') 
+        media = '(min-width: %s)' % $MAX-LAYOUT-INNER-WIDTH
+        @media media 
+            {block}
+
+
+    else if ($point == 'retina') 
+        media = '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)' 
+        @media media 
+            {block}
+     
+    
+
+/*
+=================
+css easing values
+=================
+*/
+$ease-out-quint    = cubic-bezier(0.230, 1.000, 0.320, 1.000)
+$ease-in-out-quint = cubic-bezier(0.860, 0.000, 0.070, 1.000)
+$ease-out-cubic    = cubic-bezier(0.215, 0.610, 0.355, 1.000)
+$ease-in-out-sine  = cubic-bezier(0.445, 0.05, 0.55, 0.95)
+
+
+
