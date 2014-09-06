@@ -1,0 +1,30 @@
+{
+  "name": "off-canvas-menu",
+  "version": "0.0.1",
+  "homepage": "https://github.com/zeezali/off-canvas-menu",
+  "authors": [
+    "Zee Zali"
+  ],
+  "description": "A responsive off-canvas menu solution with CSS and JS",
+  "main": [
+    "dist/off-canvas-menu.css",
+    "dist/off-canvas-menu.js"
+  ],
+  "keywords": [
+    "menu",
+    "responisve",
+    "off-canvas"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    ".tmp"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1"
+  }
+}
