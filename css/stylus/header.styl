@@ -50,12 +50,16 @@
         +breakpoint($COLLAPSED-MENU-BREAKPOINT)
             display: inline-block
             text-align: left
-    
+
+
+    .stress-test
+        +breakpoint($COLLAPSED-MENU-BREAKPOINT)
+            display: none
     
     ul
         +breakpoint($COLLAPSED-MENU-BREAKPOINT)
             text-align: justify
-            margin-bottom: -1em
+            margin: 0 0 -1em
 
             &:after
                 content: ''
