@@ -58,7 +58,8 @@ Stylesheet Author: Zee Zali
 @media (min-width: 60.5em) {
   .site-nav li {
     display: inline-block;
-    text-align: left;
+    text-align: center;
+    padding: 0 2.8em;
   }
 }
 @media (min-width: 60.5em) {
@@ -68,12 +69,7 @@ Stylesheet Author: Zee Zali
 }
 @media (min-width: 60.5em) {
   .site-nav ul {
-    text-align: justify;
-    margin: 0 0 -1em;
-  }
-  .site-nav ul:after {
-    content: '';
-    width: 100%;
-    display: inline-block;
+    text-align: center;
+    margin: 0 0 0;
   }
 }
