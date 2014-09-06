@@ -142,13 +142,17 @@
     Scripts
     =======
     -->
-    <script src="../lib/vendor/jquery.js"></script>
-    <script src="../lib/off-canvas-menu.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../dist/off-canvas-menu.js"></script>
 
     <script>
         (function () {
 
-            var menu = new OffCanvasMenu();
+            var menu = new OffCanvasMenu({
+                menuTrigger: '.js-menu-trigger',
+                offCanvasContainer: '.js-off-canvas-container',
+                nonMenuContainer: '.js-non-menu-container'
+            });
 
         })();
     </script>

@@ -9,7 +9,10 @@ Author: Zee Zali
 ;(function($) {
 
     /* constructor */
-    var OffCanvasMenu = function() {
+    var OffCanvasMenu = function(options) {
+
+        // configure options object
+        this.options = options;
 
         // recorded when the menu is opened
         // used when the menu is active to determine how much we've scrolled from our original position
@@ -43,8 +46,8 @@ Author: Zee Zali
             this.$body     = $(document.body);
             this.$html     = $('html');
 
-            this.$offCanvasContainer = $('.js-off-canvas-container');
-            this.$nonMenuContainer   = $('.js-non-menu-container');
+            this.$nonMenuContainer   = $(this.options.nonMenuContainer);
+            this.$offCanvasContainer = $(this.options.offCanvasContainer);
 
         },
 
@@ -71,9 +74,9 @@ Author: Zee Zali
 
             var nonMenuClickHandler = function(e) {
                 var $target = $(e.target);
-                var parentTrigger = $target.parents('.js-menu-trigger');
+                var parentTrigger = $target.parents(this.options.menuTrigger);
 
-                var isTheTrigger = ($target.hasClass('js-menu-trigger') || parentTrigger.length > 0);
+                var isTheTrigger = ($target.hasClass( this.options.menuTrigger.substr(1) ) || parentTrigger.length > 0);
 
                 if ( !isTheTrigger && this.$body.hasClass(this.classnames.menuActive) ) {
                     e.preventDefault();
@@ -82,9 +85,9 @@ Author: Zee Zali
             };
 
 
-            this.$body.on('click', '.js-non-menu-container', nonMenuClickHandler.bind(this));
+            this.$body.on('click', this.options.nonMenuContainer, nonMenuClickHandler.bind(this));
 
-            this.$body.on('click', '.js-menu-trigger', menuTriggerHandler.bind(this));
+            this.$body.on('click', this.options.menuTrigger, menuTriggerHandler.bind(this));
 
             this.$window.on('scroll', scrollHandler.bind(this));
 
@@ -175,5 +178,3 @@ Author: Zee Zali
     }
 
 })(window.jQuery);
-
-
