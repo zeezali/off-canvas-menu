@@ -22,7 +22,7 @@ You'll need **jQuery**.
         <!-- menu -->
     </div>
 
-    <div class="off-canvas-container js-off-canvas-container">
+    <div class="js-non-menu-container">
         <!-- everything else -->
         <!-- all the other content except the menu -->
     </div>
